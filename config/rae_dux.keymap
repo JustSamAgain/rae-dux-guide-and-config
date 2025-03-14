@@ -22,10 +22,10 @@
 
         layer_1 {
             bindings = <
-&kp LS(UNDER)  &kp N6  &kp N5  &kp N4  &kp PLUS   &kp LS(STAR)   &kp F4  &kp F5  &kp F6  &kp F10
-&kp DOT        &kp N3  &kp N2  &kp N1  &kp MINUS  &kp LSHFT      &kp F1  &kp F2  &kp F3  &kp F11
-&kp COMMA      &kp N9  &kp N8  &kp N7  &kp EQUAL  &kp LS(COLON)  &kp F7  &kp F8  &kp F9  &kp F12
-                       &trans  &trans  &kp N0     &kp N0         &trans  &trans
+&kp UNDER  &kp N6  &kp N5  &kp N4  &kp PLUS   &kp STAR   &kp F4  &kp F5  &kp F6  &kp F10
+&kp DOT    &kp N3  &kp N2  &kp N1  &kp MINUS  &kp LSHFT  &kp F1  &kp F2  &kp F3  &kp F11
+&kp COMMA  &kp N9  &kp N8  &kp N7  &kp EQUAL  &kp COLON  &kp F7  &kp F8  &kp F9  &kp F12
+                   &trans  &trans  &kp N0     &kp N0     &trans  &trans
             >;
         };
     };
