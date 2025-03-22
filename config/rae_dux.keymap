@@ -4,25 +4,52 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "keys_de.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#include "keys_de.h"
-
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        excl {
+            bindings = <&kp EXCL>;
+            key-positions = <1 11>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <2 12>;
+        };
+
+        scope {
+            bindings = <&kp COLON>;
+            key-positions = <3 13>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        base_layer {
             bindings = <
-&kp Q      &kp W      &kp F      &kp P      &kp B     &kp J    &kp L        &kp U      &kp Y      &kp APOS
-&kp LA(A)  &kp LG(R)  &kp LS(S)  &kp LC(T)  &kp G     &kp M    &kp RC(N)    &kp RS(E)  &kp RG(I)  &kp RA(O)
-&kp Z      &kp X      &kp C      &kp D      &kp V     &kp K    &kp H        &kp COMMA  &kp DOT    &kp FSLH
-                      &kp TAB    &lt 1 DEL  &kp BSPC  &kp RET  &lt 1 SPACE  &kp ESC
+&kp Q      &kp W      &kp F      &kp P      &kp B       &kp J      &kp L        &kp U         &kp Y      &kp APOS
+&kp LA(A)  &kp LG(R)  &kp LS(S)  &kp LC(T)  &kp G       &kp M      &kp RC(N)    &kp RS(E)     &kp RG(I)  &kp RA(O)
+&kp Z      &kp X      &kp C      &kp D      &kp V       &kp K      &kp H        &kp COMMA     &kp DOT    &kp FSLH
+                      &lt 3 TAB  &lt 1 DEL  &lt 2 BSPC  &lt 2 RET  &lt 1 SPACE  &lt 3 ESCAPE
             >;
         };
 
-        layer_1 {
+        sym_layer {
+            bindings = <
+&kp DE_EURO      &kp EXCL   &kp LBKT        &kp RBKT       &kp HASH   &trans         &trans     &kp DE_U_UMLAUT  &kp AT    &kp UNDERSCORE
+&kp DE_A_UMLAUT  &kp MINUS  &kp DE_SHARP_S  &kp PLUS       &kp EQUAL  &kp AMPERSAND  &kp PRCNT  &kp LBRC         &kp RBRC  &kp DE_O_UMLAUT
+&kp CARET        &kp FSLH   &kp ASTRK       &kp BACKSLASH  &kp TILDE  &trans         &kp DLLR   &kp LT           &kp GT    &kp FSLH
+                            &trans          &trans         &trans     &trans         &trans     &trans
+            >;
+        };
+
+        num_layer {
             bindings = <
 &kp UNDER  &kp N6  &kp N5  &kp N4  &kp PLUS   &kp STAR   &kp F4  &kp F5  &kp F6  &kp F10
 &kp DOT    &kp N3  &kp N2  &kp N1  &kp MINUS  &kp LSHFT  &kp F1  &kp F2  &kp F3  &kp F11
@@ -30,12 +57,13 @@
                    &trans  &trans  &kp N0     &kp N0     &trans  &trans
             >;
         };
-        layer_2 {
+
+        nav_layer {
             bindings = <
-&kp DE_CARET    &kp DE_N1   &kp DE_N2 &kp DE_N3 &kp DE_N4 &kp DE_N5 &kp DE_N6   &kp DE_A_UMLAUT &kp DE_O_UMLAUT &kp DE_U_UMLAUT
-&kp TAB         &kp DE_Q    &kp DE_W  &kp DE_E  &kp DE_R  &kp DE_T  &kp DE_Z    &kp DE_B        &kp DE_N        &kp DE_EURO
-&kp CAPS        &kp DE_A    &kp DE_S  &kp DE_D  &kp DE_F  &kp DE_G  &kp DE_H    &kp DE_H        &kp DE_H        &kp DE_H
-                            &kp LSHFT &kp DE_LT &kp DE_Y  &kp DE_X  &kp DE_C  &kp DE_V
+&trans     &kp ESC    &kp SPACE   &kp RET      &trans  &trans  &trans    &trans      &trans      &trans
+&kp LALT   &kp LGUI   &kp LSHFT   &kp LCTRL    &trans  &trans  &kp LEFT  &kp DOWN    &kp UP      &kp RIGHT
+&kp LC(A)  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans  &trans  &kp HOME  &kp K_PREV  &kp K_NEXT  &kp END
+                      &trans      &trans       &trans  &trans  &trans    &trans
             >;
         };
     };
