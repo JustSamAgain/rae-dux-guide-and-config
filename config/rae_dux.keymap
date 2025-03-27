@@ -112,7 +112,7 @@
         };
 
         section {
-            bindings = <&kp DE_SECTION>;
+            bindings = <&kp LEFT>;
             key-positions = <15 16>;
         };
 
@@ -156,8 +156,8 @@
             key-positions = <27 26>;
         };
 
-        euro {
-            bindings = <&kp DE_EURO>;
+        right {
+            bindings = <&kp RIGHT>;
             key-positions = <28 26>;
         };
 
