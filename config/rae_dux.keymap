@@ -8,19 +8,47 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        lhm: left_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <230>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34 35>;
+        };
+
+        rhm: right_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <230>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        base_layer {
             bindings = <
-&kp Q      &kp W      &kp F      &kp P      &kp B     &kp J    &kp L        &kp U      &kp Y      &kp APOS
-&kp LA(A)  &kp LG(R)  &kp LS(S)  &kp LC(T)  &kp G     &kp M    &kp RC(N)    &kp RS(E)  &kp RG(I)  &kp RA(O)
-&kp Z      &kp X      &kp C      &kp D      &kp V     &kp K    &kp H        &kp COMMA  &kp DOT    &kp FSLH
-                      &kp TAB    &lt 1 DEL  &kp BSPC  &kp RET  &lt 1 SPACE  &kp ESC
+&kp Q            &kp W            &kp F              &kp P                &kp B     &kp J    &kp L                 &kp U               &kp Y             &kp APOS
+&lhm LEFT_ALT A  &lhm LEFT_GUI R  &lhm LEFT_SHIFT S  &lhm LEFT_CONTROL T  &kp G     &kp M    &rhm RIGHT_CONTROL N  &rhm RIGHT_SHIFT E  &rhm RIGHT_GUI I  &rhm RIGHT_ALT O
+&kp Z            &kp X            &kp C              &kp D                &kp V     &kp K    &kp H                 &kp COMMA           &kp DOT           &kp FSLH
+                                  &kp TAB            &lt 1 DEL            &kp BSPC  &kp RET  &lt 1 SPACE           &kp ESC
             >;
         };
 
-        layer_1 {
+        num_layer {
             bindings = <
 &kp UNDER  &kp N6  &kp N5  &kp N4  &kp PLUS   &kp STAR   &kp F4  &kp F5  &kp F6  &kp F10
 &kp DOT    &kp N3  &kp N2  &kp N1  &kp MINUS  &kp LSHFT  &kp F1  &kp F2  &kp F3  &kp F11
