@@ -8,6 +8,174 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        excl {
+            bindings = <&kp EXCL>;
+            key-positions = <1 11>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <2 12>;
+        };
+
+        scope {
+            bindings = <&scope>;
+            key-positions = <3 13>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <4 14>;
+        };
+
+        lpar {
+            bindings = <&kp LPAR>;
+            key-positions = <11 12>;
+        };
+
+        lbrc {
+            bindings = <&kp LBRC>;
+            key-positions = <11 13>;
+        };
+
+        lbkt {
+            bindings = <&kp LBKT>;
+            key-positions = <12 13>;
+        };
+
+        quest-m {
+            bindings = <&kp QMARK>;
+            key-positions = <13 14>;
+        };
+
+        x-super_r {
+            bindings = <&kp K_MUTE>;
+            key-positions = <11 21>;
+        };
+
+        bslash {
+            bindings = <&kp BSLH>;
+            key-positions = <12 22>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <13 23>;
+        };
+
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <14 24>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <21 22>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <22 23>;
+        };
+
+        switch_lang {
+            bindings = <&sl 1>;
+            key-positions = <21 23>;
+        };
+
+        toggle_game_layer {
+            bindings = <&tog 2>;
+            key-positions = <20 23>;
+        };
+
+        percent {
+            bindings = <&kp PRCNT>;
+            key-positions = <5 15>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <6 16>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMI>;
+            key-positions = <7 17>;
+        };
+
+        at {
+            bindings = <&kp AT>;
+            key-positions = <8 18>;
+        };
+
+        section {
+            bindings = <&kp DE_SECTION>;
+            key-positions = <15 16>;
+        };
+
+        rbkt {
+            bindings = <&kp RBKT>;
+            key-positions = <16 17>;
+        };
+
+        rbrc {
+            bindings = <&kp RBRC>;
+            key-positions = <18 16>;
+        };
+
+        rpar {
+            bindings = <&kp RPAR>;
+            key-positions = <17 18>;
+        };
+
+        dollar {
+            bindings = <&kp DLLR>;
+            key-positions = <15 25>;
+        };
+
+        ampersand {
+            bindings = <&kp AMPS>;
+            key-positions = <16 26>;
+        };
+
+        star {
+            bindings = <&kp STAR>;
+            key-positions = <17 27>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <18 28>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <27 26>;
+        };
+
+        euro {
+            bindings = <&kp DE_EURO>;
+            key-positions = <28 26>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <28 27>;
+        };
+    };
+
+    macros {
+        scope: scope {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp COLON>;
+            label = "SCOPE";
+        };
+    };
+
     behaviors {
         lhm: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
