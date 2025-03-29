@@ -13,7 +13,7 @@ This repo is not meant to be a full guide as the mentioned guide is really good
 and I don't want to copy it [^1].
 It is intended to be an extension as there were a few things in the guide that
 were (at least for me) not 100% clear and I did a few things a bit different
-(e.g. different controller). <br>
+(e.g. [different controller](#the-components-and-where-I-ordered-them)). <br>
 That means this repo is mostly be a small, more detailed [collection](#build-guide)
 of the components you need, the files and links (and shops) I used and a [guide
 for building your own configs](#configuring-zmk) as that was not explained
@@ -52,16 +52,18 @@ me exactly the same as the original ones.
 I've ordered all the other components (but the keycaps, see later on) from
 splitkb.com or AliExpress.<br>
 Some information concering that:
-- 2x 3.7V (200mAh) **LiPo battery**: shouldn't be lager than ... x ... x ...
+- 2x 3.7V (200mAh) **LiPo battery**: shouldn't be lager than 12.5x33x4mm
 - 2x right-angle **JST-2 connector**: The pin distance of the JST connectors I
-used is ...
+used is 2mm. (I used [these](https://splitkb.com/products/wireless-controller-expansion-bundle?variant=42344261288195))
 - 4x 13x **female machined pin headers**: The pin distance on the board and
-controller is ..., so you will need sockets with that spacing. I ordered rows of
-40 pins each and broke then into rows of 13 pins.
+controller is 2.54mm, so you will need sockets with that spacing (I used
+2.0x2.54mm ones). I ordered rows of 40 pins each and broke then into rows of 13
+pins.
 - 56x **mill-max pins**: I ordered these on
 [splitkb](https://splitkb.com/products/mill-max-low-profile-sockets?variant=32170972020813)
 because it turned out to be a bit difficult to find the exact properties of the pins.
 - 2x **reset button**: dimensions should be 6x3x4.3mm, I used ones from AliExpress
+(should look like [these](https://keebd.com/products/3x6x4-3mm-dip-push-button-switch))
 - 2x **power switch**: 7 pins, you can see the dimensions [here](https://keebd.com/products/switch-mini-7-pin-2-slide-positions)
 - 36x **kailh low-profile hotswap sockets**: use the choc ones, they are a bit 8-shaped,
 with the dimensions 4.7x13.2x1.8mm. (e.g. [these would work](https://splitkb.com/products/kailh-hotswap-sockets?variant=39472161456205))
