@@ -35,6 +35,7 @@ interacts physically with the boards. (for more information about the whole
 process, see the mentioned guide ;))
 <details>
   <summary>alternative rae-dux-pcb files</summary>
+  
   There are also some alternative rae-dux-pcb files. One is the
   [goos-rae-dux-board](https://github.com/FelixBrgm/goos) by
   [FelixBrgm](https://github.com/FelixBrgm). He moved the pads for the switches
@@ -79,6 +80,7 @@ size of 17.5x16.5mm, the ones I printed are 15x15mm.
 
 <details>
   <summary>Planning to order from splitkb.com? Then pay attention to this 👇</summary>
+  
   Take care if you decide to order the hotswap sockets for the nice!nanos from
   splitkb.com. They have (as I am writing this) one pin too few for the controllers
   (12 instead of 13). But if you don't plan on building whireless boards that won't
@@ -107,6 +109,7 @@ the small ones barely fit but I found them to be too clunky for me
 
 <details>
   <summary>Some funny key caps 3d-files</summary>
+  
   - [round ones](https://cults3d.com/en/3d-model/gadget/kailh-choc-v1-modular-keycaps) (not tested)
   - [duck key cap](https://www.printables.com/model/911964-kailh-choc-custom-duck-keycap) (not tested)
 </details>
