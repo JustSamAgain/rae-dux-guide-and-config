@@ -114,21 +114,81 @@ the small ones barely fit but I found them to be too clunky for me
   - [duck key cap](https://www.printables.com/model/911964-kailh-choc-custom-duck-keycap) (not tested)
 </details>
 
+### Flashing the keyboard
+That's the part where I found the guide to be really confusing. The .uf2 files
+are not that easy to find. <br>
+You can download my config files from this repo. <br>
+As I am using a german layout I set up **two layout branches**. There are 
+the **german-layout** and the **us-layout** branch. The reason for that 
+is that the ZMK's key codes indicate the position of a key on a US keyboard 
+layout, not the key's function ([source](https://github.com/joelspadin/zmk-locales)).
+So if you are not using the us-qwerty keyboard on your conputer, the 
+zmk-layout may act weird.<br>
+Therefore if you are using either the german or us layout you can go on 
+with the next paragraph and download my german or us config. If you are 
+using a different language or don't like my layout you need to 
+[configure your own layout](#configuring-zmk) as I currently only 
+support the mentioned ones.
+
+Nice! You decided to give one of my layouts a shot. Choose the branch 
+you decided to take on the top of the page (click on the branches button 
+and then select the german or us branch). Here you can see all the config files.<br>
+Now click on 'Actions' in the navigation bar. Then search for the 
+latest workflow run fitting your chosen language. (if you don't want to 
+search, you can also select on the right side of the bar above the workflows 
+'Branch' and set a filter for the branch you have chosen)
+Select it and scroll down until you see the 'Artifacts'. There you need to 
+download the 'firmware'. That's the zip-folder containing the .uf2 files.
+
+For flashing your boards connect them via cable with your computer and 
+click two times on the reset button to put them into boodloader mode. 
+They should then show up on your computer and be mountable like a 
+USB-drive. Grab the correct .uf2 file and drop it into the filesystem 
+of the controller. After this it should reboot and eject itself.
+Now they should already work via cable.<br>
+Pair your device with the boards via bluetooth to use them wirelessly.
+
+<details>
+  <summary>If you want a different layout, here are some</summary>
+
+  You can find the .uf2 files here in the same location as described above.
+  - [repo by haglobah](https://github.com/haglobah/zmk-config-tzcl)
+  - [the config of FelixBrgm](https://github.com/FelixBrgm/goos)) 
+</details>
+
+<details>
+  <summary>german-layout explained</summary>
+  
+  I have chosen to use a colemak layout - that's why the key layer isn't 
+  similar in any way to the layout you are probably used to.
+  >photo documenataion<
+  While holding the thumb keys you can swith to different layers.
+</details>
+
+<details>
+  <summary>us-layout explained</summary>
+
+  I have chosen to use a colemak layout - that's why the key layer isn't 
+  similar in any way to the layout you are probably used to.
+  >photo documenataion<
+  While holding the thumb keys you can swith to different layers.
+</details>
+
+<details>
+  <summary>How to learn the new layout? ;)</summary>
+
+  Learning the new layout can take a bit of efford. But dont give up :)
+  Here are some websites that really halped me getting into it:
+
+  - https://www.keybr.com/
+  - https://monkeytype.com/?lang=en
+  And finally: simply practice, learn the basics so you can "survive"
+  using the board and then start using one shortcut, one special character
+  after another.
+</details>
 
 ### Configuring ZMK
 *! currently in work !*
-
-That's the part where I found the guide to be really confusing. The .uf2 files
-are not that easy to find. <br>
-I downloaded the .uf2 files from the [repo by haglobah](https://github.com/haglobah/zmk-config-tzcl)
-(but there are a few alternatives e.g. [the config of FelixBrgm](https://github.com/FelixBrgm/goos)).
-They are quite well hidden if you are not used to GitHub. If you know GitHub,
-they are in the build artifacts of the build job under GitHub Actions. For
-everyone else, here is the longer explanation: You can find them if you go on
-his [repo](https://github.com/haglobah/zmk-config-tzcl) and click on 'Actions'
-in the naviagtion bar. Then select 'Build' on the left, click on the latest
-workflow run and scroll down until you see the 'Artifacts'. There you need to
-download the 'firmware'. That's the zip folder containing the .uf2 files.
 
 If you want to compile your own configs you have to follow the [explanation of
 the zmk project](https://zmk.dev/docs/user-setup). I just did that and it Was
