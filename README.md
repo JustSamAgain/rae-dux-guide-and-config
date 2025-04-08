@@ -153,7 +153,7 @@ Pair your device with the boards via bluetooth to use them wirelessly.
 
   You can find the .uf2 files here in the same location as described above.
   - [repo by haglobah](https://github.com/haglobah/zmk-config-tzcl)
-  - [the config of FelixBrgm](https://github.com/FelixBrgm/goos)) 
+  - [the config of FelixBrgm](https://github.com/FelixBrgm/goos)
 </details>
 
 <details>
@@ -161,8 +161,30 @@ Pair your device with the boards via bluetooth to use them wirelessly.
   
   I have chosen to use a colemak layout - that's why the key layer isn't 
   similar in any way to the layout you are probably used to.
-  >photo documenataion<
-  While holding the thumb keys you can swith to different layers.
+  ![image](https://github.com/user-attachments/assets/c6b90df1-9429-44b7-b8a6-2e052ebf2a7e)<br>
+  This is my base layer. On the middle row you can see that there are weird double signs.
+  That is what we call 'home row mods'. If you hold the \<a\> (or \<o\>) key on the left, it won't type an
+  'a' but get interpreted as you holding the left \<alt\> key. The same goes with the other 
+  keys that have two lables on them: the \<r\> and \<i\> works when you hold it as \<GUI-key\> (on windows 
+  that's the win-key), the \<s\> or \<e\> as \<Shift\>, the \<t\> or \<n\> as \<Strg\>. 
+
+  While holding the thumb keys you can swith to different layers.<br>
+  To switch to the symbol layer you need to hold one of the middle thumb
+  keys (they are on both sides the same, just mirrored).
+  ![image](https://github.com/user-attachments/assets/4048155c-dadc-4822-9ecb-58b2b72d7672)
+
+  You can swith to the num-layer while pressing the inner thunb keys:
+  ![image](https://github.com/user-attachments/assets/88af6aad-e115-407f-8a28-bcab9ecb298c)
+
+  And to the nav-layer while holding down the outer thumb keys:
+  ![image](https://github.com/user-attachments/assets/90fced65-cea7-4fcc-8de8-ddf9ae0ee548)
+
+  That's not all, as you might have realized, you cannot type every sign 
+  yet (like for example a question mark).<br>
+  For that I am using something that we call 'combos'.
+  ![combos](https://github.com/user-attachments/assets/5017a4e0-a3cd-4846-b73f-c912361ca419)<br>
+  There are some that are not really useful, my plan is to look what I really need and 
+  replace them in future.
 </details>
 
 <details>
@@ -170,8 +192,28 @@ Pair your device with the boards via bluetooth to use them wirelessly.
 
   I have chosen to use a colemak layout - that's why the key layer isn't 
   similar in any way to the layout you are probably used to.
-  >photo documenataion<
-  While holding the thumb keys you can swith to different layers.
+  ![image](https://github.com/user-attachments/assets/ccc29082-8ac0-4459-8d09-6344e12c7400)<br>
+  This is my base layer. On the middle row you can see that there are weird double signs.
+  That is what we call 'home row mods'. If you hold the \<A\> (or \<O\>) key on the left, it won't type an
+  'A' but get interpreted as you holding the left \<ALT\> key. The same goes with the other 
+  keys that have two lables on them: the \<R\> and \<I\> works when you hold it as \<GUI-key\> (on windows 
+  that's the win-key), the \<S\> or \<E\> as \<SHIFT\>, the \<T\> or \<N\> as \<CRTL\>.
+
+  
+  
+  While holding the thumb keys (currently only the middle one) you can swith to different layers.<br>
+  To switch to the num-layer you need to hold one of the middle thumb
+  keys (they are on both sides the same, just mirrored).
+  ![image](https://github.com/user-attachments/assets/51caaa77-e81f-42ed-8476-4fbbfd412fdc)
+
+  That's not all, as you might have realized, you cannot type every sign 
+  yet (like for example a question mark).<br>
+  For that I am using something that we call 'combos'.
+  ![combos-us](https://github.com/user-attachments/assets/db03b2ef-84af-4ba6-86e3-c945e2aa0c1e)<br>
+  There are some that are not really useful, my plan is to look what I really need and 
+  replace them in future.<br>
+  Note: This layout is currently probably more sort of a good starting point for learing
+  and then configuing to the own needs.
 </details>
 
 <details>
@@ -181,7 +223,7 @@ Pair your device with the boards via bluetooth to use them wirelessly.
   Here are some websites that really halped me getting into it:
 
   - https://www.keybr.com/
-  - https://monkeytype.com/?lang=en
+  - https://monkeytype.com/?lang=en<br>
   And finally: simply practice, learn the basics so you can "survive"
   using the board and then start using one shortcut, one special character
   after another.
