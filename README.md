@@ -35,6 +35,7 @@ interacts physically with the boards. (for more information about the whole
 process, see the mentioned guide ;))
 <details>
   <summary>alternative rae-dux-pcb files</summary>
+  
   There are also some alternative rae-dux-pcb files. One is the
   [goos-rae-dux-board](https://github.com/FelixBrgm/goos) by
   [FelixBrgm](https://github.com/FelixBrgm). He moved the pads for the switches
@@ -79,6 +80,7 @@ size of 17.5x16.5mm, the ones I printed are 15x15mm.
 
 <details>
   <summary>Planning to order from splitkb.com? Then pay attention to this 👇</summary>
+  
   Take care if you decide to order the hotswap sockets for the nice!nanos from
   splitkb.com. They have (as I am writing this) one pin too few for the controllers
   (12 instead of 13). But if you don't plan on building whireless boards that won't
@@ -107,25 +109,128 @@ the small ones barely fit but I found them to be too clunky for me
 
 <details>
   <summary>Some funny key caps 3d-files</summary>
+  
   - [round ones](https://cults3d.com/en/3d-model/gadget/kailh-choc-v1-modular-keycaps) (not tested)
   - [duck key cap](https://www.printables.com/model/911964-kailh-choc-custom-duck-keycap) (not tested)
 </details>
 
+### Flashing the keyboard
+That's the part where I found the guide to be really confusing. The .uf2 files
+are not that easy to find. <br>
+You can download my config files from this repo. <br>
+As I am using a german layout I set up **two layout branches**. There are 
+the **german-layout** and the **us-layout** branch. The reason for that 
+is that the ZMK's key codes indicate the position of a key on a US keyboard 
+layout, not the key's function ([source](https://github.com/joelspadin/zmk-locales)).
+So if you are not using the us-qwerty keyboard on your conputer, the 
+zmk-layout may act weird.<br>
+Therefore if you are using either the german or us layout you can go on 
+with the next paragraph and download my german or us config. If you are 
+using a different language or don't like my layout you need to 
+[configure your own layout](#configuring-zmk) as I currently only 
+support the mentioned ones.
+
+Nice! You decided to give one of my layouts a shot. Choose the branch 
+you decided to take on the top of the page (click on the branches button 
+and then select the german or us branch). Here you can see all the config files.<br>
+Now click on 'Actions' in the navigation bar. Then search for the 
+latest workflow run fitting your chosen language. (if you don't want to 
+search, you can also select on the right side of the bar above the workflows 
+'Branch' and set a filter for the branch you have chosen)
+Select it and scroll down until you see the 'Artifacts'. There you need to 
+download the 'firmware'. That's the zip-folder containing the .uf2 files.
+
+For flashing your boards connect them via cable with your computer and 
+click two times on the reset button to put them into boodloader mode. 
+They should then show up on your computer and be mountable like a 
+USB-drive. Grab the correct .uf2 file and drop it into the filesystem 
+of the controller. After this it should reboot and eject itself.
+Now they should already work via cable.<br>
+Pair your device with the boards via bluetooth to use them wirelessly.
+
+<details>
+  <summary>If you want a different layout, here are some</summary>
+
+  You can find the .uf2 files here in the same location as described above.
+  - [repo by haglobah](https://github.com/haglobah/zmk-config-tzcl)
+  - [the config of FelixBrgm](https://github.com/FelixBrgm/goos)
+</details>
+
+<details>
+  <summary>german-layout explained</summary>
+  
+  I have chosen to use a colemak layout - that's why the key layer isn't 
+  similar in any way to the layout you are probably used to.
+  ![image](https://github.com/user-attachments/assets/c6b90df1-9429-44b7-b8a6-2e052ebf2a7e)<br>
+  This is my base layer. On the middle row you can see that there are weird double signs.
+  That is what we call 'home row mods'. If you hold the \<a\> (or \<o\>) key on the left, it won't type an
+  'a' but get interpreted as you holding the left \<alt\> key. The same goes with the other 
+  keys that have two lables on them: the \<r\> and \<i\> works when you hold it as \<GUI-key\> (on windows 
+  that's the win-key), the \<s\> or \<e\> as \<Shift\>, the \<t\> or \<n\> as \<Strg\>. 
+
+  While holding the thumb keys you can swith to different layers.<br>
+  To switch to the symbol layer you need to hold one of the middle thumb
+  keys (they are on both sides the same, just mirrored).
+  ![image](https://github.com/user-attachments/assets/4048155c-dadc-4822-9ecb-58b2b72d7672)
+
+  You can swith to the num-layer while pressing the inner thunb keys:
+  ![image](https://github.com/user-attachments/assets/88af6aad-e115-407f-8a28-bcab9ecb298c)
+
+  And to the nav-layer while holding down the outer thumb keys:
+  ![image](https://github.com/user-attachments/assets/90fced65-cea7-4fcc-8de8-ddf9ae0ee548)
+
+  That's not all, as you might have realized, you cannot type every sign 
+  yet (like for example a question mark).<br>
+  For that I am using something that we call 'combos'.
+  ![combos](https://github.com/user-attachments/assets/5017a4e0-a3cd-4846-b73f-c912361ca419)<br>
+  There are some that are not really useful, my plan is to look what I really need and 
+  replace them in future.
+</details>
+
+<details>
+  <summary>us-layout explained</summary>
+
+  I have chosen to use a colemak layout - that's why the key layer isn't 
+  similar in any way to the layout you are probably used to.
+  ![image](https://github.com/user-attachments/assets/ccc29082-8ac0-4459-8d09-6344e12c7400)<br>
+  This is my base layer. On the middle row you can see that there are weird double signs.
+  That is what we call 'home row mods'. If you hold the \<A\> (or \<O\>) key on the left, it won't type an
+  'A' but get interpreted as you holding the left \<ALT\> key. The same goes with the other 
+  keys that have two lables on them: the \<R\> and \<I\> works when you hold it as \<GUI-key\> (on windows 
+  that's the win-key), the \<S\> or \<E\> as \<SHIFT\>, the \<T\> or \<N\> as \<CRTL\>.
+
+  
+  
+  While holding the thumb keys (currently only the middle one) you can swith to different layers.<br>
+  To switch to the num-layer you need to hold one of the middle thumb
+  keys (they are on both sides the same, just mirrored).
+  ![image](https://github.com/user-attachments/assets/51caaa77-e81f-42ed-8476-4fbbfd412fdc)
+
+  That's not all, as you might have realized, you cannot type every sign 
+  yet (like for example a question mark).<br>
+  For that I am using something that we call 'combos'.
+  ![combos-us](https://github.com/user-attachments/assets/db03b2ef-84af-4ba6-86e3-c945e2aa0c1e)<br>
+  There are some that are not really useful, my plan is to look what I really need and 
+  replace them in future.<br>
+  Note: This layout is currently probably more sort of a good starting point for learing
+  and then configuing to the own needs.
+</details>
+
+<details>
+  <summary>How to learn the new layout? ;)</summary>
+
+  Learning the new layout can take a bit of efford. But dont give up :)
+  Here are some websites that really halped me getting into it:
+
+  - https://www.keybr.com/
+  - https://monkeytype.com/?lang=en<br>
+  And finally: simply practice, learn the basics so you can "survive"
+  using the board and then start using one shortcut, one special character
+  after another.
+</details>
 
 ### Configuring ZMK
 *! currently in work !*
-
-That's the part where I found the guide to be really confusing. The .uf2 files
-are not that easy to find. <br>
-I downloaded the .uf2 files from the [repo by haglobah](https://github.com/haglobah/zmk-config-tzcl)
-(but there are a few alternatives e.g. [the config of FelixBrgm](https://github.com/FelixBrgm/goos)).
-They are quite well hidden if you are not used to GitHub. If you know GitHub,
-they are in the build artifacts of the build job under GitHub Actions. For
-everyone else, here is the longer explanation: You can find them if you go on
-his [repo](https://github.com/haglobah/zmk-config-tzcl) and click on 'Actions'
-in the naviagtion bar. Then select 'Build' on the left, click on the latest
-workflow run and scroll down until you see the 'Artifacts'. There you need to
-download the 'firmware'. That's the zip folder containing the .uf2 files.
 
 If you want to compile your own configs you have to follow the [explanation of
 the zmk project](https://zmk.dev/docs/user-setup). I just did that and it Was
