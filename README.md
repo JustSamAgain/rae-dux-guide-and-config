@@ -119,10 +119,10 @@ That's the part where I found the guide to be really confusing. The .uf2 files
 are not that easy to find. <br>
 You can download my config files from this repo. <br>
 As I am using a german layout I set up **two layout branches**. There are 
-the **german-layout** and the **us-layout** branch. The reason for that 
+the **german-layout**[^2] and the **us-layout** branch. The reason for that 
 is that the ZMK's key codes indicate the position of a key on a US keyboard 
 layout, not the key's function ([source](https://github.com/joelspadin/zmk-locales)).
-So if you are not using the us-qwerty keyboard on your conputer, the 
+So if you are not using the us-qwerty keyboard on your computer, the 
 zmk-layout may act weird.<br>
 Therefore if you are using either the german or us layout you can go on 
 with the next paragraph and download my german or us config. If you are 
@@ -146,7 +146,7 @@ They should then show up on your computer and be mountable like a
 USB-drive. Grab the correct .uf2 file and drop it into the filesystem 
 of the controller. After this it should reboot and eject itself.
 Now they should already work via cable.<br>
-Pair your device with the boards via bluetooth to use them wirelessly.
+Pair your device with the boards via Bluetooth to use them wirelessly.
 
 <details>
   <summary>If you want a different layout, here are some</summary>
@@ -165,15 +165,15 @@ Pair your device with the boards via bluetooth to use them wirelessly.
   This is my base layer. On the middle row you can see that there are weird double signs.
   That is what we call 'home row mods'. If you hold the \<a\> (or \<o\>) key on the left, it won't type an
   'a' but get interpreted as you holding the left \<alt\> key. The same goes with the other 
-  keys that have two lables on them: the \<r\> and \<i\> works when you hold it as \<GUI-key\> (on windows 
+  keys that have two labels on them: the \<r\> and \<i\> works when you hold it as \<GUI-key\> (on windows 
   that's the win-key), the \<s\> or \<e\> as \<Shift\>, the \<t\> or \<n\> as \<Strg\>. 
 
-  While holding the thumb keys you can swith to different layers.<br>
+  While holding the thumb keys you can switch to different layers.<br>
   To switch to the symbol layer you need to hold one of the middle thumb
   keys (they are on both sides the same, just mirrored).
   ![image](https://github.com/user-attachments/assets/4048155c-dadc-4822-9ecb-58b2b72d7672)
 
-  You can swith to the num-layer while pressing the inner thunb keys:
+  You can switch to the num-layer while pressing the inner thumb keys:
   ![image](https://github.com/user-attachments/assets/88af6aad-e115-407f-8a28-bcab9ecb298c)
 
   And to the nav-layer while holding down the outer thumb keys:
@@ -196,12 +196,12 @@ Pair your device with the boards via bluetooth to use them wirelessly.
   This is my base layer. On the middle row you can see that there are weird double signs.
   That is what we call 'home row mods'. If you hold the \<A\> (or \<O\>) key on the left, it won't type an
   'A' but get interpreted as you holding the left \<ALT\> key. The same goes with the other 
-  keys that have two lables on them: the \<R\> and \<I\> works when you hold it as \<GUI-key\> (on windows 
+  keys that have two labels on them: the \<R\> and \<I\> works when you hold it as \<GUI-key\> (on windows 
   that's the win-key), the \<S\> or \<E\> as \<SHIFT\>, the \<T\> or \<N\> as \<CRTL\>.
 
   
   
-  While holding the thumb keys (currently only the middle one) you can swith to different layers.<br>
+  While holding the thumb keys (currently only the middle one) you can switch to different layers.<br>
   To switch to the num-layer you need to hold one of the middle thumb
   keys (they are on both sides the same, just mirrored).
   ![image](https://github.com/user-attachments/assets/51caaa77-e81f-42ed-8476-4fbbfd412fdc)
@@ -213,7 +213,7 @@ Pair your device with the boards via bluetooth to use them wirelessly.
   There are some that are not really useful, my plan is to look what I really need and 
   replace them in future.<br>
   Note: This layout is currently probably more sort of a good starting point for learing
-  and then configuing to the own needs.
+  and then configuring to the own needs.
 </details>
 
 <details>
@@ -229,18 +229,41 @@ Pair your device with the boards via bluetooth to use them wirelessly.
   after another.
 </details>
 
+[^2]:heavily inspired by the [layout haglobah uses](https://github.com/haglobah/zmk-config-tzcl)
+
 ### Configuring ZMK
-*! currently in work !*
 
-If you want to compile your own configs you have to follow the [explanation of
-the zmk project](https://zmk.dev/docs/user-setup). I just did that and it Was
-reallly complicated for this keyboard.
+If you want to compile your own configs I would recommend you to fork this
+repository (button on the top right of this page) and open it in 
+the [Keymap editor](https://nickcoutsos.github.io/keymap-editor/) made by Nick Coutsos.
+You can edit there your configs graphically and push it back into the repository.
+Just choose the right branch you want to work on (main, german or us-layout as 
+explained before) and adjust it to your needs.
 
-The easier way is to fork my repo and open it with the
-[Keymap editor](https://nickcoutsos.github.io/keymap-editor/)
-made by Nick Coutsos. <br>
-Otherwise you can select Clipboard, select custom and use the .json file
-in this repo and make your own configs.
+If you aren't using a german or US keyboard layout you will soon see that either your keys 
+are not in the Keymap editor or your system thinks you are tapping different buttons. If so 
+you may have to do some extra work:
+
+Either you go into your settings and switch your layout to the US layout while using
+the keyboard (in that case I would recommend you to work on the us-layout branch).
+
+Or, and this is my preferred way: Go to [zmk-locale-generator](https://github.com/joelspadin/zmk-locale-generator/releases),
+download your language package (in the german case that was `keys_de.h`) and copy it to the "config"
+folder. Then open the rae_dux.keymap file and add the file to the imports (in the german case that's
+`#include "keys_de.h"`). It's best if you use the main branch for that as you can build your
+configs there from ground up and the language file wouldn't interfere with e.g. the german file.
+But you can of course use the german branch as example how to configure the language stuff.
+
+Downloading your newly built firmware exactly works like described [above](#flashing-the-keyboard). 
+The only difference is that you download the files from your own repo now instead of mine.
+
+If you are interested in the whole ZMK Framework you can read and follow the [explanation of
+the zmk project](https://zmk.dev/docs/user-setup). However, I wouldn't recommend the setup for 
+this keyboard. It was reallly complicated as this board unfortunately is too unpopular and therefore 
+not officially supported.
+
+As always, if you have any problems with the explanation, please don't hesitate to 
+open an Issue. :)
 
 #### Storage box
 If you want to print your own storage box for the board, here is a
