@@ -177,7 +177,7 @@ Pair your device with the boards via Bluetooth to use them wirelessly.
   ![image](https://github.com/user-attachments/assets/88af6aad-e115-407f-8a28-bcab9ecb298c)
 
   And to the nav-layer while holding down the outer thumb keys:
-  ![image](https://github.com/user-attachments/assets/90fced65-cea7-4fcc-8de8-ddf9ae0ee548)
+  ![image](https://github.com/user-attachments/assets/255fc8d8-e21e-482d-beb3-29f7813ca254)
 
   That's not all, as you might have realized, you cannot type every sign 
   yet (like for example a question mark).<br>
