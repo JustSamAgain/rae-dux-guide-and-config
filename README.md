@@ -270,3 +270,7 @@ If you want to print your own storage box for the board, here is a
 [repo](https://github.com/haglobah/rae-dux-case) that contains a 3d-file for one
 that closes using magnets. I am currently also building my own with a sliding
 mechanism.
+
+## Version Bumping
+Currently this repo is pinned to release v0.3.0
+If in the future you wish to upgrade your ZMK's version, simply change the tag in west.yml and build.yml ([zmk-src](https://zmk.dev/blog/2025/06/20/pinned-zmk#version-bumping))
