@@ -161,9 +161,9 @@ Pair your device with the boards via Bluetooth to use them wirelessly.
   
   I have chosen to use a colemak layout - that's why the key layer isn't 
   similar in any way to the layout you are probably used to.
-  ![image](https://github.com/user-attachments/assets/c6b90df1-9429-44b7-b8a6-2e052ebf2a7e)<br>
+  ![image](https://github.com/user-attachments/assets/0785b066-4bab-41dd-b8f0-456b984d8e7b)<br>
   This is my base layer. On the middle row you can see that there are weird double signs.
-  That is what we call 'home row mods'. If you hold the \<a\> (or \<o\>) key on the left, it won't type an
+  That is what we call 'home row mods'. If you hold the \<a\> key on the left (or \<o\> on the right), it won't type an
   'a' but get interpreted as you holding the left \<alt\> key. The same goes with the other 
   keys that have two labels on them: the \<r\> and \<i\> works when you hold it as \<GUI-key\> (on windows 
   that's the win-key), the \<s\> or \<e\> as \<Shift\>, the \<t\> or \<n\> as \<Strg\>. 
